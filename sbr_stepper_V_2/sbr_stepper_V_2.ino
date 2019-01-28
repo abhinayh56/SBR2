@@ -29,7 +29,7 @@ int n_R, n_0_R, n0_memry_R=10000, W_R = 1;
 
 float setpoint_th, error_th, p_error_th, I_th, PID_th, kp_th, ki_th, kd_th;
 
-float SampleFrequency = 250, dt = 1/SampleFrequency, loop_timer = 1000000*dt;
+float SampleFrequency = 320, dt = 1/SampleFrequency, loop_timer = 1000000*dt;
 unsigned long t;
 unsigned long start;
 
@@ -181,7 +181,6 @@ void loop(){
   n0_memry_R = 3750/W_R;
   // motor pulse calculation ends
 
-  Serial.println(PID_th);
   //Serial.println(t-micros()); // don't print this line because the refresh rate of void loop is very high
   while(micros()<t);
   t += loop_timer;
